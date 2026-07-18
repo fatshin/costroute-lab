@@ -1,5 +1,20 @@
 import type { Product } from "./product-types";
 
+const benchmark = {
+  "gpt-5.6": { extract: [96, 2.1], reason: [95, 3.2], draft: [93, 2.4] },
+  terra: { extract: [92, 1.0], reason: [91, 1.5], draft: [92, 1.1] },
+  luna: { extract: [90, 0.4], reason: [84, 0.7], draft: [89, 0.5] },
+} as const;
+const tasks = ["extract", "reason", "draft"] as const;
+const csvRows = ["case_id,task,model,quality,cost"];
+for (let index = 0; index < 20; index += 1) {
+  const task = tasks[index % tasks.length];
+  for (const [model, values] of Object.entries(benchmark)) {
+    const [quality, cost] = values[task];
+    csvRows.push(`C${String(index + 1).padStart(2, "0")},${task},${model},${quality + (index % 2)},${cost.toFixed(2)}`);
+  }
+}
+
 export const product: Product = {
   number: "06",
   name: "CostRoute Lab",
@@ -8,8 +23,11 @@ export const product: Product = {
   description: "Evaluate candidate model routes across a fixed task set, reject any route below the quality threshold, and explain the lowest-cost passing combination.",
   accent: "#14a37f",
   inputLabel: "Routing experiment",
-  inputHint: "The same 3-model × 20-case CSV is evaluated by product.py.",
-  inputValue: "Quality floor: 91. Cases: 20. Tasks: extract, reason, draft. Models: gpt-5.6, terra, luna. Exhaustively assign one model per task and reject routes whose measured average quality is below the floor.",
+  inputHint: "This exact 3-model × 20-case CSV is evaluated by product.py.",
+  inputValue: `Quality floor: 91
+
+Evaluation results:
+${csvRows.join("\n")}`,
   actionLabel: "Reveal verified result",
   status: "ROUTE_FOUND",
   statusTone: "good",
