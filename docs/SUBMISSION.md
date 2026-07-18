@@ -24,6 +24,7 @@ escalation route. The public benchmark uses fixed synthetic scores.
 
 - Live product: https://costroute-lab.fatshin.chatgpt.site
 - Source: https://github.com/fatshin/costroute-lab
+- Devpost draft: https://devpost.com/software/costroute-lab
 - Video: `UPLOAD_TO_YOUTUBE_AND_REPLACE`
 
 ## Limits
