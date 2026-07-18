@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 
 import product
 from runtime.server import page, result_markup
@@ -14,7 +15,12 @@ class ProductTests(unittest.TestCase):
         self.assertIn(product.PRODUCT.name, page())
         self.assertNotIn("<script>", result_markup({"status": "<script>", "headline": "safe", "metrics": {}, "items": [], "evidence": [], "artifact": {}}))
 
+    def test_public_fixture_matches_engine_fixture_without_escalation_claim(self):
+        site = Path("site/app/product-data.ts").read_text()
+        self.assertIn("91.5", site)
+        self.assertIn("draft→terra, extract→luna, reason→terra", site)
+        self.assertNotIn("escalation", site.lower())
+
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -2,6 +2,9 @@
 
 **Tagline:** Find the cheapest route that still clears the quality floor.
 
+**Category:** Developer Tools  
+**Codex Session ID:** `019f7306-7262-7371-a03f-6b99df7129bf`
+
 ## What it does
 
 CostRoute Lab evaluates complete model-routing combinations over a fixed
