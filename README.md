@@ -1,5 +1,7 @@
 # CostRoute Lab
 
+[Live demo](https://costroute-lab.fatshin.chatgpt.site) · [Public repository](https://github.com/fatshin/costroute-lab)
+
 CostRoute Lab finds the lowest-cost model route that clears an explicit quality
 floor. It compares a GPT-5.6-only baseline with every task-to-model assignment
 across 20 fixed evaluation cases.
@@ -36,4 +38,3 @@ demo. A production version would ingest measured API usage and grader results.
 
 The costs are normalized demo values, not current billing quotes. The optimizer
 does not predict future quality or route live production traffic.
-

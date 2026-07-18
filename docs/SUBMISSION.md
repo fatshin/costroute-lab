@@ -1,0 +1,31 @@
+# CostRoute Lab — Submission
+
+**Tagline:** Find the cheapest route that still clears the quality floor.
+
+## What it does
+
+CostRoute Lab evaluates complete model-routing combinations over a fixed
+twenty-case suite, rejects routes below the quality floor, and explains the
+lowest-cost passing route.
+
+## How it was built
+
+Codex implemented exhaustive search, deterministic scoring, coverage checks,
+tests, and the browser experience. GPT-5.6 is the high-capability baseline and
+escalation route. The public benchmark uses fixed synthetic scores.
+
+## Proof
+
+- 20 cases with a 91-point quality floor
+- selected route scores 92 with complete coverage
+- 61% fixture cost reduction versus the GPT-5.6-only fixture
+
+## Links
+
+- Live product: https://costroute-lab.fatshin.chatgpt.site
+- Source: https://github.com/fatshin/costroute-lab
+- Video: `UPLOAD_TO_YOUTUBE_AND_REPLACE`
+
+## Limits
+
+The benchmark is a reproducible fixture, not a universal price claim.
