@@ -13,9 +13,10 @@ lowest-cost passing route.
 
 ## How it was built
 
-Codex implemented exhaustive search, deterministic scoring, coverage checks,
-tests, and the browser experience. GPT-5.6 is the high-capability baseline and
-escalation route. The public benchmark uses fixed synthetic scores.
+I used Codex with GPT-5.6 to implement exhaustive search, deterministic scoring,
+coverage checks, tests, and the browser experience. GPT-5.6 is represented as
+the high-capability baseline in the tested fixture. The public benchmark uses
+fixed synthetic scores and does not make live model calls.
 
 ## Proof
 
